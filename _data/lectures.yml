@@ -186,6 +186,7 @@
     - Brown et al., <a href="https://arxiv.org/abs/2005.14165">Language Models are Few-Shot Learners</a> (the GPT-3 paper)
     - Raschka, <a href="https://www.youtube.com/watch?v=YSAkgEarBGE&list=PLTKMiZHVd_2Licpov-ZK24j6oUnbhiPkm">Build an LLM from Scratch 4</a> (video)
     - Karpathy, <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY">Let's Build GPT from Scratch </a>(video)
+  slides: "/dgm-fall-2025/assets/lectures/Lecture_21_gpt.pdf"
 
 - date: 11/19
   lecturer: Prof. Lengerich
