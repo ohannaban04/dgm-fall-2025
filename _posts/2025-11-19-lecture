@@ -1,0 +1,104 @@
+---
+layout: distill
+title: Lecture 22
+description: Unsupervised Training of LLMs
+date: 2025-11-29
+
+lecturers:
+  - name: Ben Lengerich
+    url: "https://adaptinfer.org"
+
+authors:
+  - name: Author 1 # author's full name
+    url: "#" # optional URL to the author's homepage
+  - name: Author 2
+    url: "#"
+  - name: Author 3
+    url: "#"
+
+editors:
+  - name: Editor 1 # editor's full name
+    url: "#" # optional URL to the editor's homepage
+
+abstract: >
+  An example abstract block
+---
+
+## Scale & Emergent Capabilities
+
+### 2.1 Emergent Capabilities in LLMs
+
+#### What Happens as We Scale Training?
+
+<figure id="scaling-laws" class="l-body-outset">
+  <div class="row">
+    <div class="col" style="width: 100%; float: left;">
+      <img src="{{ '/assets/img/notes/lecture-22/3.1.png' | relative_url }}" />
+      <figcaption>
+        <strong>Figure 1.</strong>
+        Language modeling performance improves smoothly as we increase
+        the model size, dataset size, and amount of compute used for training.
+        For optimal performance all three factors must be scaled up in tandem.
+        Empirical performance has a power-law relationship with each individual
+        factor when not bottlenecked by the other two.
+      </figcaption>
+    </div>
+  </div>
+</figure>
+
+<figure id="emergent-abilities" class="l-body-outset">
+  <div class="row">
+    <div class="col" style="width: 100%; float: left;">
+      <img src="{{ '/assets/img/notes/lecture-22/3.2.png' | relative_url }}" />
+      <figcaption>
+        <strong>Figure 2.</strong>
+        Smooth improvements in overall loss can lead to sharp “emergent”
+        jumps in task performance. An ability is called emergent if it is
+        not present in smaller models but appears in larger models
+        (Wei et al., 2022).
+      </figcaption>
+    </div>
+  </div>
+</figure>
+
+#### Examples of Emergence
+
+1. **In-Context Learning** : Model learns to perform tasks from examples provided in the prompt.
+2. **Chain-of-Thought Reasoning** :  Model generates intermediate reasoning steps.
+3. **Factual structure understanding**: To fill in “The capital of France ___ Paris”, model must: 
+    - Track subject-verb agreement;
+    - Understand the underlying fact structure;
+    - Recognize task domain (geography).
+
+#### Hypotheses for Emergence
+
+- Scale increases representational capacity  
+- MLE forces models to capture global dependencies  
+- Large training corpora contain implicit demonstrations of reasoning  
+- Transformers act as meta-learners over massive data distributions
+
+
+### 2.2 Challenges in Scaling Unsupervised Training
+
+#### Data Filtering Issues
+
+At trillion-token scale, filtering toxic, low-quality, or duplicated text becomes extremely difficult.
+
+#### Parallel Training
+
+Training trillion-parameter models requires:
+- Expert parallelism
+- Distributed optimization
+- Fault tolerance
+- Training pipelines like DeepSpeed / Megatron
+
+#### LLM360 Initiative
+
+Open efforts like LLM360 / TxT360 aim to make complete training pipelines observable and reproducible for education and research.
+
+---
+
+<footer>
+<p>© 2025 University of Wisconsin — STAT 453 Lecture Notes</p>
+</footer>
+
